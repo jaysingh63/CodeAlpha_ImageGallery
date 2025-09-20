@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CodeAlpha — Responsive Image Gallery</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1>Image Gallery — CodeAlpha</h1>
+    <p class="subtitle">Responsive grid • Lightbox • Filters • Keyboard support</p>
+  </header>
+
+  <main class="container">
+    <section class="controls" aria-label="Gallery controls">
+      <div class="filter-group" role="tablist" aria-label="Filter images">
+        <button class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
+        <button class="filter-btn" data-filter="nature">Nature</button>
+        <button class="filter-btn" data-filter="city">City</button>
+        <button class="filter-btn" data-filter="people">People</button>
+      </div>
+      <div class="info">Click an image to open lightbox — use ← → Esc</div>
+    </section>
+
+    <section class="gallery" id="gallery" aria-live="polite">
+      <article class="card" tabindex="0" data-category="nature" data-index="0">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=60&auto=format&fit=crop" alt="Misty mountains with sunrise" />
+        <div class="meta">Misty mountains</div>
+      </article>
+      <article class="card" tabindex="0" data-category="city" data-index="1">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=1200&q=60&auto=format&fit=crop" alt="City skyline at dusk" />
+        <div class="meta">City skyline</div>
+      </article>
+      <article class="card" tabindex="0" data-category="people" data-index="2">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=1200&q=60&auto=format&fit=crop" alt="Portrait of a smiling person" />
+        <div class="meta">Portrait</div>
+      </article>
+      <article class="card" tabindex="0" data-category="nature" data-index="3">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&q=60&auto=format&fit=crop" alt="Forest path with sun rays" />
+        <div class="meta">Forest path</div>
+      </article>
+      <article class="card" tabindex="0" data-category="city" data-index="4">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1200&q=60&auto=format&fit=crop" alt="Urban street at night" />
+        <div class="meta">Urban street</div>
+      </article>
+      <article class="card" tabindex="0" data-category="people" data-index="5">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1200&q=60&auto=format&fit=crop" alt="Smiling person outdoors" />
+        <div class="meta">Outdoor portrait</div>
+      </article>
+    </section>
+  </main>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Image viewer">
+    <button class="close" id="lbClose" aria-label="Close (Esc)">&times;</button>
+    <button class="nav prev" id="lbPrev" aria-label="Previous image" title="Previous (←)">&larr;</button>
+    <div class="lightbox-content" id="lbContent" tabindex="-1">
+      <img id="lbImage" src="" alt="" />
+      <div class="lb-caption" id="lbCaption"></div>
+      <div class="lb-controls">
+        <span id="lbCounter"></span>
+      </div>
+    </div>
+    <button class="nav next" id="lbNext" aria-label="Next image" title="Next (→)">&rarr;</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
